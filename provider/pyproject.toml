@@ -1,0 +1,35 @@
+[project]
+name = "provider"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Giuseppe Monitillo",email = "113453755+GMon11@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "uvicorn (>=0.52.4,<0.53.0)",
+    "fastapi (>=0.141.1,<0.142.0)",
+    "python-multipart (>=0.0.32,<0.0.33)",
+    "basemodel (>=20190604.1625,<20190605.0)",
+    "pydantic (>=2.13.5,<3.0.0)"
+]
+
+[project.scripts]
+run-full = "provider.run:run_full"
+run-partial = "provider.run:run_partial"
+run-inactive = "provider.run:run_inactive"
+run-all = "provider.run:run_all"
+
+[tool.poetry]
+packages = [{include = "provider", from = "src"}]
+
+[tool.poetry.scripts]
+run-full = "provider.run:run_full"
+run-partial = "provider.run:run_partial"
+run-inactive = "provider.run:run_inactive"
+run-all = "provider.run:run_all"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,20 @@
+2026-09-20 17:14:48,703 - INFO - Initializing Request Processor
+2026-09-20 17:15:12,901 - INFO - 1 requests to be processed for 5 files
+2026-09-20 17:15:12,972 - INFO - Processing logger.py
+2026-09-20 17:15:12,973 - INFO - Processing llm_client.py
+2026-09-20 17:15:12,973 - INFO - Processing orchestrator.py
+2026-09-20 17:15:12,975 - INFO - Waiting 3 promises
+2026-09-20 17:15:12,975 - INFO - Waiting 3 promises
+2026-09-20 17:15:12,975 - INFO - Waiting 3 promises
+2026-09-20 17:15:16,014 - INFO - llm_client.py processed
+2026-09-20 17:15:16,018 - INFO - Processing request.py
+2026-09-20 17:15:16,029 - INFO - Waiting 3 promises
+2026-09-20 17:15:17,007 - INFO - orchestrator.py processed
+2026-09-20 17:15:17,009 - INFO - logger.py processed
+2026-09-20 17:15:17,013 - INFO - Processing __init__.py
+2026-09-20 17:15:17,015 - INFO - Waiting 3 promises
+2026-09-20 17:15:20,043 - INFO - request.py processed
+2026-09-20 17:15:21,024 - INFO - __init__.py processed
+2026-09-20 17:15:21,028 - INFO - Publishing processing results for 5 files
+2026-09-20 17:15:27,141 - INFO - Error file created for 0
+2026-09-20 17:15:27,229 - INFO - Success file created for 5
