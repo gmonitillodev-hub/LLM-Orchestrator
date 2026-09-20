@@ -210,4 +210,4 @@ class Orchestrator:
         )
 
         self.logger.info(f"Success file created for {len(properly_processed)}")
-        print(f" Results published. Open <LLM Orchestrator result> folder in your home.")
+        print(f"  Results published. Open <LLM Orchestrator result> folder in your home.")

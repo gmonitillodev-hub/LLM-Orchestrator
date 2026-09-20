@@ -2,7 +2,7 @@ import argparse
 import asyncio
 
 from classes.orchestrator import Orchestrator
-from utils.terminal import print_info
+from utils.terminal import clear_terminal, print_info
 
 CLIENT_CHOICES = ("Active", "Inactive", "Partial")
 
@@ -31,6 +31,7 @@ def parse_args() -> argparse.Namespace:
 async def main() -> None:
     args = parse_args()
 
+    clear_terminal()
     print_info()
 
     orchestrator = Orchestrator(args.client, args.max_concurrency)
