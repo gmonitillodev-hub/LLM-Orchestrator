@@ -186,7 +186,7 @@ class Orchestrator:
 
         timestamp = time.strftime("%Y%m%d-%H%M%S")
 
-        output_dir = Path.home() / "LLM Orchestrator result" / "failed"
+        output_dir = Path.home() / "LLM_Orchestrator_result" / "failed"
         output_dir.mkdir(parents=True, exist_ok=True)
 
         df.to_excel(
@@ -202,7 +202,7 @@ class Orchestrator:
             "File path": list(map(lambda f: f.file_path, properly_processed)),
         })
 
-        output_dir = Path.home() / "LLM Orchestrator result" / "success"
+        output_dir = Path.home() / "LLM_Orchestrator_result" / "success"
         output_dir.mkdir(parents=True, exist_ok=True)
 
         df.to_excel(
@@ -210,4 +210,4 @@ class Orchestrator:
         )
 
         self.logger.info(f"Success file created for {len(properly_processed)}")
-        print(f"  Results published. Open <LLM Orchestrator result> folder in your home.")
+        print(f"  Results published. Open {output_dir} to view the results")
