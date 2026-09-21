@@ -61,3 +61,11 @@ Results are saved under `~/LLM Orchestrator result/`:
 - `failed/processing_error_<timestamp>.xlsx`
 
 Logs are saved under `log/`.
+
+## Testing
+
+```bash
+poetry run test
+```
+
+Extra pytest args are forwarded, e.g. `poetry run test -k llm_client`.

@@ -16,6 +16,7 @@ dependencies = [
 
 [project.scripts]
 orchestrator = "orchestrator.__main__:run"
+test = "utils.test_runner:run"
 
 [tool.poetry]
 packages = [
@@ -24,6 +25,15 @@ packages = [
     {include = "utils", from = "src"}
 ]
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)"
+]

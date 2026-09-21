@@ -33,10 +33,11 @@ def accept_new_request():
                 error_msg = f"{field_name} -> {error['msg']}"
                 print(f"    {error_msg}")
 
-                accept_new_request()
+            return accept_new_request()
 
         else:
             print(e)
+            return accept_new_request()
 
 
 def ask_new_request():
