@@ -30,7 +30,6 @@ class Orchestrator:
         """ Initialize client and logger """
         self.llm_client = LlmClient(client, self.config)
         self.logger = setup_logger(to_bool(self.config.get("General", "debug_mode")))
-        self.logger.n
 
     """ Collect requests from the user """
 
