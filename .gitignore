@@ -2,9 +2,41 @@
 # Logs
 *.log
 logs/
+log/
 
-# Caches
+# Processing results
+LLM_Orchestrator_result/
+
+# Python bytecode / packaging artifacts
 __pycache__/
 *.py[cod]
+*$py.class
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Tool caches
 .cache/
 cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

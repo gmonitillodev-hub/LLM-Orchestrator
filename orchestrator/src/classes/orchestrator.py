@@ -8,7 +8,7 @@ from pandas import DataFrame
 from classes import Request, OperationEnum, LlmClient, setup_logger
 from orchestrator.request_processor import accept_new_request, ask_new_request
 from utils.file_handler import read_text_file, ProcessedPath, ProcessingResult, Error
-from utils.terminal import clear_terminal, to_bool, get_config, print_info
+from utils.terminal import clear_terminal, to_bool, get_config, print_info, get_repository_root
 
 
 class Orchestrator:
@@ -196,7 +196,7 @@ class Orchestrator:
 
         timestamp = time.strftime("%Y%m%d-%H%M%S")
 
-        output_dir =  "LLM_Orchestrator_result" / "failed"
+        output_dir = get_repository_root() / "LLM_Orchestrator_result" / "failed"
         output_dir.mkdir(parents=True, exist_ok=True)
 
         df.to_excel(
@@ -212,7 +212,7 @@ class Orchestrator:
             "File path": list(map(lambda f: f.file_path, properly_processed)),
         })
 
-        output_dir =  "LLM_Orchestrator_result" / "success"
+        output_dir = get_repository_root() / "LLM_Orchestrator_result" / "success"
         output_dir.mkdir(parents=True, exist_ok=True)
 
         df.to_excel(

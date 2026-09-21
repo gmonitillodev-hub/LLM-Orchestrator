@@ -147,14 +147,14 @@ class TestOrchestratorPublishProcessingResult(unittest.TestCase):
 
     @patch("classes.orchestrator.clear_terminal")
     def test_publish_processing_result_writes_success_and_failed_files(self, mock_clear_terminal):
-        with patch("pathlib.Path.home") as mock_home:
+        with patch("classes.orchestrator.get_repository_root") as mock_repo_root:
             with tempfile.TemporaryDirectory() as tmp_dir:
-                # Redirect the user's "home" to a temp dir so we don't pollute the real one
-                mock_home.return_value = Path(tmp_dir)
+                # Redirect the repository root to a temp dir so we don't pollute the real one
+                mock_repo_root.return_value = Path(tmp_dir)
 
                 self.orchestrator.publish_processing_result()
 
-                result_dir = Path(tmp_dir) / "LLM Orchestrator result"
+                result_dir = Path(tmp_dir) / "LLM_Orchestrator_result"
 
                 success_files = list((result_dir / "success").glob("processing_success_*.xlsx"))
                 failed_files = list((result_dir / "failed").glob("processing_error_*.xlsx"))
