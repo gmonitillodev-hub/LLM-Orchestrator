@@ -2,8 +2,22 @@ import configparser
 import os
 
 
+def _running_in_notebook() -> bool:
+    """Detect Jupyter/Colab notebooks, where os.system('clear') has no visible effect
+    because cell output is rendered as HTML, not a real terminal."""
+    try:
+        from IPython import get_ipython
+        return get_ipython() is not None
+    except ImportError:
+        return False
+
+
 def clear_terminal():
-    os.system("cls" if os.name == "nt" else "clear")
+    if _running_in_notebook():
+        from IPython.display import clear_output
+        clear_output(wait=True)
+    else:
+        os.system("cls" if os.name == "nt" else "clear")
 
 
 def print_info():

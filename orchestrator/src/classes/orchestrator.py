@@ -196,7 +196,7 @@ class Orchestrator:
 
         timestamp = time.strftime("%Y%m%d-%H%M%S")
 
-        output_dir = Path.home() / "LLM_Orchestrator_result" / "failed"
+        output_dir =  "LLM_Orchestrator_result" / "failed"
         output_dir.mkdir(parents=True, exist_ok=True)
 
         df.to_excel(
@@ -212,7 +212,7 @@ class Orchestrator:
             "File path": list(map(lambda f: f.file_path, properly_processed)),
         })
 
-        output_dir = Path.home() / "LLM_Orchestrator_result" / "success"
+        output_dir =  "LLM_Orchestrator_result" / "success"
         output_dir.mkdir(parents=True, exist_ok=True)
 
         df.to_excel(
