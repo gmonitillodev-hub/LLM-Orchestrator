@@ -103,7 +103,7 @@ class Orchestrator:
     async def process_requests(self):
 
         clear_terminal()
-        print(f" ------ File process started ------ ")
+        print(f" ------ File processing started ------ ")
 
         semaphore = threading.Semaphore(self.MAX_CONCURRENCY)
         threads = list()
@@ -126,15 +126,25 @@ class Orchestrator:
 
         for operation in OperationEnum:
 
+            operation_prompt: str
+
             match operation:
                 case OperationEnum.CLASSIFY:
-                    operation_prompt = "You are a classifier"
+                    operation_prompt = (
+                        "Classify the provided content into its most appropriate category. "
+                        "Return only the category name and a brief justification."
+                    )
 
                 case OperationEnum.SUMMARIZE:
-                    operation_prompt = "summarize"
+                    operation_prompt = (
+                        "Provide a simple, concise summary of the provided content."
+                    )
 
                 case OperationEnum.KEYWORD_EXTRACTION:
-                    operation_prompt = "keyword extraction"
+                    operation_prompt = (
+                        "Extract the most relevant keywords and key phrases from the provided "
+                        "content. Return a concise, comma-separated list without explanations."
+                    )
 
                 case _:
                     self.logger.error(f"Unknown operation {operation}")
